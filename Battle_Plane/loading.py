@@ -2,14 +2,14 @@ import pygame
 
 
 class Loading(pygame.sprite.Sprite):
-    def __init__(self, sprite_sheet, x, y, image_x, image_y, width, height, scale, count_image, clock, loading):
+    def __init__(self, sprite_sheet, x, y, image_x, image_y, width, height, resize_x, resize_y, count_image, clock, loading):
         pygame.sprite.Sprite.__init__(self)
 
         self.images_load = []
 
         for i in range(count_image):
             img = sprite_sheet.subsurface((i * image_x, image_y), (width, height))
-            img = pygame.transform.scale(img, (width * scale, height * scale))
+            img = pygame.transform.scale(img, (resize_x, resize_y))
             self.images_load.append(img)
 
         self.index = 0
