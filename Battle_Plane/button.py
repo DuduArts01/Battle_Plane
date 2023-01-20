@@ -6,7 +6,7 @@ class Button(pygame.sprite.Sprite):
         
         self.images_button = []
         for i in range(2): 
-            img = sprite_sheet.subsurface((i * image_x, image_y), (width, height))
+            img = sprite_sheet.subsurface((i * image_x, 0 * image_y), (width, height))
             img = pygame.transform.scale(img, (resize_x, resize_y))
             self.images_button.append(img)
 
@@ -27,9 +27,10 @@ class Button(pygame.sprite.Sprite):
             if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
                 self.action = True
                 self.image = self.images_button[int(1)]
-            else:
-                self.action = False
-                self.clicked = False
+        else:
+            self.image = self.images_button[int(0)]
+            self.action = False
+            self.clicked = False
 
         
         

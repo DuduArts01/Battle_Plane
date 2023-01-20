@@ -6,7 +6,7 @@ class Title(pygame.sprite.Sprite):
         
         self.images_button = []
         
-        img = image.subsurface((0 * image_x, image_y), (width, height))
+        img = image.subsurface((0 * image_x, 0 * image_y), (width, height))
         img = pygame.transform.scale(img, (resize_x, resize_y))
         
         self.images_button.append(img)
